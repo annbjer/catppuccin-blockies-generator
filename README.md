@@ -1,6 +1,6 @@
 # Catppuccin Blockies Generator
 
-Generate minimal Ethereum-style PNG blockies/identicons for dashboards, wallets, and interface mockups — including black-and-white and Catppuccin Mocha themed outputs.
+Generate minimal Ethereum-style PNG and SVG blockies/identicons for dashboards, wallets, and interface mockups — including black-and-white and Catppuccin Mocha themed outputs.
 
 I made this as a quick design utility for moments when I need placeholder wallet avatars or identity icons while working on crypto/web3 dashboards. It is intentionally simple: run a script, generate a batch of blockies, and drop them into your mockups or prototypes.
 
@@ -18,34 +18,51 @@ npm install
 
 ## Usage
 
-Generate a batch of Catppuccin-themed PNG blockies:
+Generate a batch of Catppuccin-themed PNG and SVG blockies:
 
 ```bash
 npm run generate
 ```
 
-Generate a black-and-white blockie from the dummy example seed/address:
+Generate a black-and-white blockie with a random seed/address:
 
 ```bash
 npm run generate:bw
+# or
+node generate-bw-blockie.js
 ```
 
-Generate a single PNG blockie from the dummy example seed/address:
+Generate a black-and-white blockie with a deterministic seed/address:
+
+```bash
+node generate-bw-blockie.js 0x1234567890abcdef1234567890abcdef12345678
+```
+
+Generate a single PNG and SVG blockie with a random seed/address:
 
 ```bash
 npm run generate:single
+# or
+node generate-blockie.js
+```
+
+Generate a single PNG and SVG blockie with a deterministic seed/address:
+
+```bash
+node generate-blockie.js 0x1234567890abcdef1234567890abcdef12345678
 ```
 
 ## Output
 
-- `npm run generate` writes PNG files to `./blockies_png/`.
-- `npm run generate:bw` and `npm run generate:single` write `./blockie.png`.
+- `npm run generate` writes timestamped batch PNG and SVG files to `./generated-blockies/`.
+- `npm run generate:bw` writes timestamped files like `./generated-blockies/blockie-bw_YYYYMMDDHHMMSS.png` and `.svg`.
+- `npm run generate:single` writes timestamped files like `./generated-blockies/blockie-single_YYYYMMDDHHMMSS.png` and `.svg`.
 
-Generated PNG outputs are ignored by Git by default.
+Generated outputs are ignored by Git by default.
 
 ## Notes
 
-The wallet/address-looking values in the example scripts are dummy seeds only. They are used to produce deterministic visual output and are not intended to represent a real wallet.
+Wallet/address-looking values in the examples are dummy seeds only. They are used to produce deterministic visual output and are not intended to represent a real wallet. If no seed/address is provided, the single-output scripts generate a random Ethereum-style seed/address and print it.
 
 This tool creates visual identicons only. It does not validate wallet ownership, verify addresses, or perform any blockchain lookups.
 

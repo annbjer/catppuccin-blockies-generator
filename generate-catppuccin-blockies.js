@@ -1,5 +1,6 @@
 const blockies = require('ethereum-blockies-png');
 const fs = require('fs');
+const { createSvg } = require('./blockie-svg');
 
 // catppuccin mocha palette
 const palette = [
@@ -10,7 +11,7 @@ const palette = [
 ];
 
 // optional: create output folder if not exists
-const outDir = './blockies_png';
+const outDir = './generated-blockies';
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
 
 // timestamp helper
@@ -24,15 +25,19 @@ for (let i = 0; i < 12; i++) {
   const bgcolor = palette[Math.floor(Math.random() * palette.length)];
   const spotcolor = palette[Math.floor(Math.random() * palette.length)];
 
-  const buffer = blockies.createBuffer({
+  const options = {
     seed,
     scale: 10,
     color,
     bgcolor,
     spotcolor,
-  });
+  };
 
-  const filename = `${outDir}/blockie_${timestamp()}_${i + 1}.png`;
-  fs.writeFileSync(filename, buffer);
-  console.log(`✅ saved ${filename}`);
+  const buffer = blockies.createBuffer(options);
+  const svg = createSvg(options);
+
+  const baseFilename = `${outDir}/blockie_${timestamp()}_${i + 1}`;
+  fs.writeFileSync(`${baseFilename}.png`, buffer);
+  fs.writeFileSync(`${baseFilename}.svg`, svg);
+  console.log(`✅ saved ${baseFilename}.png and ${baseFilename}.svg`);
 }

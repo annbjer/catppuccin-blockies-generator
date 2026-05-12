@@ -1,8 +1,10 @@
 node_modules/
 .DS_Store
 
-# Generated PNG output
+# Generated output
 blockie.png
+blockie.svg
+generated-blockies/
 blockies_png/
 avatars/
 png/

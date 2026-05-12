@@ -1,16 +1,31 @@
 const blockies = require('ethereum-blockies-png');
+const crypto = require('crypto');
 const fs = require('fs');
+const { createSvg } = require('./blockie-svg');
 
-const address = '0x1234567890abcdef1234567890abcdef12345678';
+const randomAddress = () => `0x${crypto.randomBytes(20).toString('hex')}`;
+const seed = (process.argv[2] || randomAddress()).toLowerCase();
 
-const pngBuffer = blockies.createBuffer({
-  seed: address.toLowerCase(),
+const options = {
+  seed,
   scale: 10,
   color: '#000000',
   bgcolor: '#ffffff',
   spotcolor: '#000000',
-});
+};
 
-fs.writeFileSync('blockie.png', pngBuffer);
+const outDir = './generated-blockies';
+if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
 
-console.log('✅ black & white blockie saved as blockie.png');
+// timestamp helper
+const timestamp = () => new Date().toISOString().replace(/[-:.TZ]/g, '').slice(0, 14);
+
+const pngBuffer = blockies.createBuffer(options);
+const svg = createSvg(options);
+
+const baseFilename = `${outDir}/blockie-single_${timestamp()}`;
+fs.writeFileSync(`${baseFilename}.png`, pngBuffer);
+fs.writeFileSync(`${baseFilename}.svg`, svg);
+
+console.log(`✅ blockie saved as ${baseFilename}.png and ${baseFilename}.svg`);
+console.log(`seed: ${seed}`);
