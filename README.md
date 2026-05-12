@@ -2,6 +2,12 @@
 
 Generate Ethereum-style PNG blockies/identicons, including a Catppuccin Mocha themed batch generator.
 
+## Preview
+
+![Single blockie example](examples/example-single.png)
+![Catppuccin blockie example 1](examples/example-catppuccin-01.png)
+![Catppuccin blockie example 2](examples/example-catppuccin-02.png)
+
 ## Install
 
 ```bash
@@ -41,6 +47,12 @@ The wallet/address-looking values in the example scripts are dummy seeds only. T
 
 This tool creates visual identicons only. It does not validate wallet ownership, verify addresses, or perform any blockchain lookups.
 
+## Attribution
+
+This is an unofficial tool inspired by the Catppuccin Mocha color palette. Catppuccin is created by the Catppuccin community.
+
+This project is not affiliated with or endorsed by the official Catppuccin organization.
+
 ## License
 
-ISC
+MIT
