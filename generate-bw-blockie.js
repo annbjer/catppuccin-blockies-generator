@@ -18,7 +18,8 @@ const outDir = './generated-blockies';
 if (!fs.existsSync(outDir)) fs.mkdirSync(outDir);
 
 // timestamp helper
-const timestamp = () => new Date().toISOString().replace(/[-:.TZ]/g, '').slice(0, 14);
+const timestamp = () =>
+  new Date().toISOString().replace(/[-:.TZ]/g, '').slice(0, 14);
 
 const pngBuffer = blockies.createBuffer(options);
 const svg = createSvg(options);

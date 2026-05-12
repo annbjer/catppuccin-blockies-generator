@@ -1,8 +1,13 @@
 # Catppuccin Blockies Generator
 
-Generate minimal Ethereum-style PNG and SVG blockies/identicons for dashboards, wallets, and interface mockups — including black-and-white and Catppuccin Mocha themed outputs.
+Generate minimal Ethereum-style PNG and SVG blockies/identicons for dashboards,
+wallets, and interface mockups — including black-and-white and Catppuccin Mocha
+themed outputs.
 
-I made this as a quick design utility for moments when I need placeholder wallet avatars or identity icons while working on crypto/web3 dashboards. It is intentionally simple: run a script, generate a batch of blockies, and drop them into your mockups or prototypes.
+I made this as a quick design utility for moments when I need placeholder wallet
+avatars or identity icons while working on crypto/web3 dashboards. It is
+intentionally simple: run a script, generate a batch of blockies, and drop them
+into your mockups or prototypes.
 
 ## Preview
 
@@ -24,7 +29,8 @@ Generate a batch of Catppuccin-themed PNG and SVG blockies:
 npm run generate
 ```
 
-Generate one Catppuccin Mocha styled PNG and SVG blockie with a random seed/address:
+Generate one Catppuccin Mocha styled PNG and SVG blockie with a random
+seed/address:
 
 ```bash
 npm run generate:single
@@ -32,7 +38,8 @@ npm run generate:single
 node generate-blockie.js
 ```
 
-Generate one Catppuccin Mocha styled PNG and SVG blockie with a deterministic seed/address/string:
+Generate one Catppuccin Mocha styled PNG and SVG blockie with a deterministic
+seed/address/string:
 
 ```bash
 node generate-blockie.js 0x1234567890abcdef1234567890abcdef12345678
@@ -46,7 +53,8 @@ npm run generate:bw
 node generate-bw-blockie.js
 ```
 
-Generate one black-and-white PNG and SVG blockie with a deterministic seed/address/string:
+Generate one black-and-white PNG and SVG blockie with a deterministic
+seed/address/string:
 
 ```bash
 node generate-bw-blockie.js 0x1234567890abcdef1234567890abcdef12345678
@@ -54,23 +62,32 @@ node generate-bw-blockie.js 0x1234567890abcdef1234567890abcdef12345678
 
 ## Output
 
-- `npm run generate` writes timestamped Catppuccin Mocha batch PNG and SVG files to `./generated-blockies/`.
-- `npm run generate:single` writes timestamped Catppuccin Mocha files like `./generated-blockies/blockie-single_YYYYMMDDHHMMSS.png` and `.svg`.
-- `npm run generate:bw` writes timestamped black-and-white files like `./generated-blockies/blockie-bw_YYYYMMDDHHMMSS.png` and `.svg`.
+- `npm run generate` writes timestamped Catppuccin Mocha batch PNG and SVG
+  files to `./generated-blockies/`.
+- `npm run generate:single` writes timestamped Catppuccin Mocha files like
+  `./generated-blockies/blockie-single_YYYYMMDDHHMMSS.png` and `.svg`.
+- `npm run generate:bw` writes timestamped black-and-white files like
+  `./generated-blockies/blockie-bw_YYYYMMDDHHMMSS.png` and `.svg`.
 
 Generated outputs are ignored by Git by default.
 
 ## Notes
 
-Wallet/address-looking values in the examples are dummy seeds only. They are used to produce deterministic visual output and are not intended to represent a real wallet. If no seed/address is provided, the single-output scripts generate a random Ethereum-style seed/address and print it.
+Wallet/address-looking values in the examples are dummy seeds only. They are
+used to produce deterministic visual output and are not intended to represent a
+real wallet. If no seed/address is provided, the single-output scripts generate
+a random Ethereum-style seed/address and print it.
 
-This tool creates visual identicons only. It does not validate wallet ownership, verify addresses, or perform any blockchain lookups.
+This tool creates visual identicons only. It does not validate wallet ownership,
+verify addresses, or perform any blockchain lookups.
 
 ## Attribution
 
-This is an unofficial tool inspired by the Catppuccin Mocha color palette. Catppuccin is created by the Catppuccin community.
+This is an unofficial tool inspired by the Catppuccin Mocha color palette.
+Catppuccin is created by the Catppuccin community.
 
-This project is not affiliated with or endorsed by the official Catppuccin organization.
+This project is not affiliated with or endorsed by the official Catppuccin
+organization.
 
 ## License
 

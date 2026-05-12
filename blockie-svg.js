@@ -5,8 +5,10 @@ function seedrand(seed) {
   for (let i = 0; i < randseed.length; i++) {
     randseed[i] = 0;
   }
+
   for (let i = 0; i < seed.length; i++) {
-    randseed[i % 4] = (randseed[i % 4] << 5) - randseed[i % 4] + seed.charCodeAt(i);
+    randseed[i % 4] =
+      (randseed[i % 4] << 5) - randseed[i % 4] + seed.charCodeAt(i);
   }
 }
 
@@ -30,9 +32,11 @@ function createImageData(size) {
 
   for (let y = 0; y < height; y++) {
     let row = [];
+
     for (let x = 0; x < dataWidth; x++) {
       row[x] = Math.floor(rand() * 2.3);
     }
+
     row = row.concat(row.slice(0, mirrorWidth).reverse());
     data.push(...row);
   }
@@ -47,16 +51,20 @@ function escapeAttr(value) {
 function createSvg(opts = {}) {
   const size = opts.size || 8;
   const scale = opts.scale || 4;
-  const seed = opts.seed || Math.floor(Math.random() * Math.pow(10, 16)).toString(16);
+  const seed =
+    opts.seed || Math.floor(Math.random() * Math.pow(10, 16)).toString(16);
   const color = opts.color || '#000000';
   const bgcolor = opts.bgcolor || '#ffffff';
   const spotcolor = opts.spotcolor || color;
   const imageWidth = size * scale;
 
   seedrand(seed);
+
   const imageData = createImageData(size);
   const rects = [
-    `<rect width="${imageWidth}" height="${imageWidth}" fill="${escapeAttr(bgcolor)}"/>`,
+    `<rect width="${imageWidth}" height="${imageWidth}" fill="${escapeAttr(
+      bgcolor
+    )}"/>`,
   ];
 
   for (let i = 0; i < imageData.length; i++) {
@@ -67,7 +75,9 @@ function createSvg(opts = {}) {
     const fill = imageData[i] === 1 ? color : spotcolor;
 
     rects.push(
-      `<rect x="${col * scale}" y="${row * scale}" width="${scale}" height="${scale}" fill="${escapeAttr(fill)}"/>`
+      `<rect x="${col * scale}" y="${row * scale}" width="${scale}" height="${scale}" fill="${escapeAttr(
+        fill
+      )}"/>`
     );
   }
 
