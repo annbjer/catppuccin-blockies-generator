@@ -24,21 +24,7 @@ Generate a batch of Catppuccin-themed PNG and SVG blockies:
 npm run generate
 ```
 
-Generate a black-and-white blockie with a random seed/address:
-
-```bash
-npm run generate:bw
-# or
-node generate-bw-blockie.js
-```
-
-Generate a black-and-white blockie with a deterministic seed/address:
-
-```bash
-node generate-bw-blockie.js 0x1234567890abcdef1234567890abcdef12345678
-```
-
-Generate a single PNG and SVG blockie with a random seed/address:
+Generate one Catppuccin Mocha styled PNG and SVG blockie with a random seed/address:
 
 ```bash
 npm run generate:single
@@ -46,17 +32,31 @@ npm run generate:single
 node generate-blockie.js
 ```
 
-Generate a single PNG and SVG blockie with a deterministic seed/address:
+Generate one Catppuccin Mocha styled PNG and SVG blockie with a deterministic seed/address/string:
 
 ```bash
 node generate-blockie.js 0x1234567890abcdef1234567890abcdef12345678
 ```
 
+Generate one black-and-white PNG and SVG blockie with a random seed/address:
+
+```bash
+npm run generate:bw
+# or
+node generate-bw-blockie.js
+```
+
+Generate one black-and-white PNG and SVG blockie with a deterministic seed/address/string:
+
+```bash
+node generate-bw-blockie.js 0x1234567890abcdef1234567890abcdef12345678
+```
+
 ## Output
 
-- `npm run generate` writes timestamped batch PNG and SVG files to `./generated-blockies/`.
-- `npm run generate:bw` writes timestamped files like `./generated-blockies/blockie-bw_YYYYMMDDHHMMSS.png` and `.svg`.
-- `npm run generate:single` writes timestamped files like `./generated-blockies/blockie-single_YYYYMMDDHHMMSS.png` and `.svg`.
+- `npm run generate` writes timestamped Catppuccin Mocha batch PNG and SVG files to `./generated-blockies/`.
+- `npm run generate:single` writes timestamped Catppuccin Mocha files like `./generated-blockies/blockie-single_YYYYMMDDHHMMSS.png` and `.svg`.
+- `npm run generate:bw` writes timestamped black-and-white files like `./generated-blockies/blockie-bw_YYYYMMDDHHMMSS.png` and `.svg`.
 
 Generated outputs are ignored by Git by default.
 
