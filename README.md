@@ -1,6 +1,8 @@
 # Catppuccin Blockies Generator
 
-Generate Ethereum-style PNG blockies/identicons, including a Catppuccin Mocha themed batch generator.
+Generate minimal Ethereum-style PNG blockies/identicons for dashboards, wallets, and interface mockups — including black-and-white and Catppuccin Mocha themed outputs.
+
+I made this as a quick design utility for moments when I need placeholder wallet avatars or identity icons while working on crypto/web3 dashboards. It is intentionally simple: run a script, generate a batch of blockies, and drop them into your mockups or prototypes.
 
 ## Preview
 
