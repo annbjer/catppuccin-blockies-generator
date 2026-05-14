@@ -60,6 +60,20 @@ seed/address/string:
 node generate-bw-blockie.js 0x1234567890abcdef1234567890abcdef12345678
 ```
 
+## Figma Plugin
+
+A local Figma plugin MVP is available in `figma-plugin/`. It fills selected
+frames or groups with editable vector rectangle blockies.
+
+```bash
+cd figma-plugin
+npm install
+npm run build
+```
+
+Then import `figma-plugin/manifest.json` in Figma via **Plugins → Development →
+Import plugin from manifest…**.
+
 ## Output
 
 - `npm run generate` writes timestamped Catppuccin Mocha batch PNG and SVG

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catppuccin Blockies</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 16px;
+        background: #1e1e2e;
+        color: #cdd6f4;
+        font: 12px/1.4 Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      h1 {
+        margin: 0 0 14px;
+        color: #f5c2e7;
+        font-size: 16px;
+        line-height: 1.2;
+      }
+
+      fieldset {
+        margin: 0 0 14px;
+        padding: 0;
+        border: 0;
+      }
+
+      legend,
+      label.title {
+        display: block;
+        margin-bottom: 6px;
+        color: #bac2de;
+        font-weight: 600;
+      }
+
+      .row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      label.option {
+        display: inline-flex;
+        gap: 6px;
+        align-items: center;
+        color: #cdd6f4;
+      }
+
+      input,
+      select,
+      button {
+        font: inherit;
+      }
+
+      input[type='radio'] {
+        accent-color: #cba6f7;
+      }
+
+      select {
+        width: 100%;
+        padding: 6px 8px;
+        border: 1px solid #45475a;
+        border-radius: 6px;
+        background: #313244;
+        color: #cdd6f4;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 4px;
+        padding: 9px 12px;
+        border: 0;
+        border-radius: 8px;
+        background: #cba6f7;
+        color: #11111b;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      button:disabled {
+        background: #45475a;
+        color: #9399b2;
+        cursor: not-allowed;
+      }
+
+      #selection-status {
+        margin-top: 10px;
+        color: #a6adc8;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Catppuccin Blockies</h1>
+
+    <fieldset>
+      <legend>Style</legend>
+      <div class="row">
+        <label class="option">
+          <input type="radio" name="style" value="catppuccin-mocha" checked />
+          Catppuccin Mocha
+        </label>
+        <label class="option">
+          <input type="radio" name="style" value="bw" />
+          B&amp;W
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Seed mode</legend>
+      <div class="row">
+        <label class="option">
+          <input type="radio" name="seed-mode" value="random" checked />
+          Random
+        </label>
+        <label class="option">
+          <input type="radio" name="seed-mode" value="layer-name" />
+          Use layer name
+        </label>
+      </div>
+    </fieldset>
+
+    <label class="title" for="grid-size">Grid size</label>
+    <select id="grid-size">
+      <option value="6">6</option>
+      <option value="8" selected>8</option>
+      <option value="10">10</option>
+    </select>
+
+    <button id="generate" type="button" disabled>Generate</button>
+    <div id="selection-status">Select frames or groups first</div>
+
+    <!-- UI_SCRIPT -->
+  </body>
+</html>
