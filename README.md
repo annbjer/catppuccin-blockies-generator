@@ -1,69 +1,33 @@
 # Catppuccin Blockies Generator
 
+![Catppuccin Blockies cover](assets/cover.png)
+
 Generate minimal Ethereum-style PNG and SVG blockies/identicons for dashboards,
-wallets, and interface mockups — including black-and-white and Catppuccin Mocha
-themed outputs.
+wallets, and interface mockups — including Catppuccin Mocha and black-and-white
+outputs.
 
-I made this as a quick design utility for moments when I need placeholder wallet
-avatars or identity icons while working on crypto/web3 dashboards. It is
-intentionally simple: run a script, generate a batch of blockies, and drop them
-into your mockups or prototypes.
-
-## Preview
-
-![Single blockie example](examples/example-single.png)
-![Catppuccin blockie example 1](examples/example-catppuccin-01.png)
-![Catppuccin blockie example 2](examples/example-catppuccin-02.png)
-
-## Install
-
-```bash
-npm install
-```
-
-## Usage
-
-Generate a batch of Catppuccin-themed PNG and SVG blockies:
-
-```bash
-npm run generate
-```
-
-Generate one Catppuccin Mocha styled PNG and SVG blockie with a random
-seed/address:
-
-```bash
-npm run generate:single
-# or
-node generate-blockie.js
-```
-
-Generate one Catppuccin Mocha styled PNG and SVG blockie with a deterministic
-seed/address/string:
-
-```bash
-node generate-blockie.js 0x1234567890abcdef1234567890abcdef12345678
-```
-
-Generate one black-and-white PNG and SVG blockie with a random seed/address:
-
-```bash
-npm run generate:bw
-# or
-node generate-bw-blockie.js
-```
-
-Generate one black-and-white PNG and SVG blockie with a deterministic
-seed/address/string:
-
-```bash
-node generate-bw-blockie.js 0x1234567890abcdef1234567890abcdef12345678
-```
+This started as a small design utility for placeholder wallet avatars and
+identity icons while working on crypto/web3 dashboards. It now includes both a
+CLI generator and a local-first Figma plugin.
 
 ## Figma Plugin
 
-A local Figma plugin MVP is available in `figma-plugin/`. It fills selected
-frames or groups with editable vector rectangle blockies.
+Use the Figma plugin to generate editable vector blockies directly inside your
+Figma file.
+
+![Figma plugin example](assets/example.png)
+
+How it works:
+
+1. Select one or more frames/groups in Figma.
+2. Choose **Catppuccin Mocha** or **Black & White**.
+3. Choose random seeds or layer-name seeds.
+4. Generate native rectangle-based vector blockies inside the selected layers.
+
+Demo video:
+[Catppuccin Blockies Figma plugin demo](https://pub-bcc6d2313b944bc1945a7e7013ae2321.r2.dev/catppuccin-blockies/demo.mp4)
+
+### Load the plugin locally
 
 ```bash
 cd figma-plugin
@@ -74,7 +38,37 @@ npm run build
 Then import `figma-plugin/manifest.json` in Figma via **Plugins → Development →
 Import plugin from manifest…**.
 
-## Output
+## CLI Usage
+
+Install dependencies from the repo root:
+
+```bash
+npm install
+```
+
+Generate a batch of Catppuccin-themed PNG and SVG blockies:
+
+```bash
+npm run generate
+```
+
+Generate one Catppuccin Mocha PNG and SVG blockie:
+
+```bash
+npm run generate:single
+# or with a deterministic seed/address/string
+node generate-blockie.js 0x1234567890abcdef1234567890abcdef12345678
+```
+
+Generate one black-and-white PNG and SVG blockie:
+
+```bash
+npm run generate:bw
+# or with a deterministic seed/address/string
+node generate-bw-blockie.js 0x1234567890abcdef1234567890abcdef12345678
+```
+
+## CLI Output
 
 - `npm run generate` writes timestamped Catppuccin Mocha batch PNG and SVG
   files to `./generated-blockies/`.
