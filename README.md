@@ -11,8 +11,7 @@ This started as a small design utility for placeholder wallet avatars and identi
 Use the Figma plugin to generate editable vector blockies directly inside your Figma file.
 
 Install from Figma Community:
-
-https://www.figma.com/community/plugin/1637206310954646633
+[Catppuccin Blockies on Figma Community](https://www.figma.com/community/plugin/1637206310954646633/catppuccin-blockies)
 
 ![Figma plugin example](assets/example.png)
 
@@ -81,7 +80,7 @@ Generated outputs are ignored by Git by default.
 
 ## Notes
 
-Wallet/address-looking values in the examples are dummy seeds only. They are used to produce deterministic visual output and are not intended to represent a real wallet. 
+Wallet/address-looking values in the examples are dummy seeds only. They are used to produce deterministic visual output and are not intended to represent a real wallet.
 If no seed/address is provided, the single-output scripts generate a random Ethereum-style seed/address and print it.
 
 This tool creates visual identicons only. It does not validate wallet ownership, verify addresses, or perform any blockchain lookups.
