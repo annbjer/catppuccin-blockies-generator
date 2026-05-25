@@ -2,24 +2,23 @@
 
 ![Catppuccin Blockies cover](assets/cover.png)
 
-Generate minimal Ethereum-style PNG and SVG blockies/identicons for dashboards,
-wallets, and interface mockups — including Catppuccin Mocha and black-and-white
-outputs.
+Generate minimal Ethereum-style PNG and SVG blockies/identicons for dashboards, wallets, and interface mockups, including Catppuccin Mocha and black-and-white outputs.
 
-This started as a small design utility for placeholder wallet avatars and
-identity icons while working on crypto/web3 dashboards. It now includes both a
-CLI generator and a local-first Figma plugin.
+This started as a small design utility for placeholder wallet avatars and identity icons while working on crypto/web3 dashboards. It now includes both a CLI generator and a Figma Community plugin.
 
 ## Figma Plugin
 
-Use the Figma plugin to generate editable vector blockies directly inside your
-Figma file.
+Use the Figma plugin to generate editable vector blockies directly inside your Figma file.
+
+Install from Figma Community:
+
+https://www.figma.com/community/plugin/1637206310954646633
 
 ![Figma plugin example](assets/example.png)
 
 How it works:
 
-1. Select one or more frames/groups in Figma.
+1. Select one or more frames or groups in Figma.
 2. Choose **Catppuccin Mocha** or **Black & White**.
 3. Choose random seeds or layer-name seeds.
 4. Generate native rectangle-based vector blockies inside the selected layers.
@@ -27,7 +26,9 @@ How it works:
 Demo video:
 [Catppuccin Blockies Figma plugin demo](https://pub-bcc6d2313b944bc1945a7e7013ae2321.r2.dev/catppuccin-blockies/demo.mp4)
 
-### Load the plugin locally
+### Local development
+
+To build the Figma plugin locally:
 
 ```bash
 cd figma-plugin
@@ -35,8 +36,7 @@ npm install
 npm run build
 ```
 
-Then import `figma-plugin/manifest.json` in Figma via **Plugins → Development →
-Import plugin from manifest…**.
+Then import `figma-plugin/manifest.json` in Figma via **Plugins → Development → Import plugin from manifest…**.
 
 ## CLI Usage
 
@@ -81,13 +81,10 @@ Generated outputs are ignored by Git by default.
 
 ## Notes
 
-Wallet/address-looking values in the examples are dummy seeds only. They are
-used to produce deterministic visual output and are not intended to represent a
-real wallet. If no seed/address is provided, the single-output scripts generate
-a random Ethereum-style seed/address and print it.
+Wallet/address-looking values in the examples are dummy seeds only. They are used to produce deterministic visual output and are not intended to represent a real wallet. 
+If no seed/address is provided, the single-output scripts generate a random Ethereum-style seed/address and print it.
 
-This tool creates visual identicons only. It does not validate wallet ownership,
-verify addresses, or perform any blockchain lookups.
+This tool creates visual identicons only. It does not validate wallet ownership, verify addresses, or perform any blockchain lookups.
 
 ## Attribution
 
