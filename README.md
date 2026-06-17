@@ -23,7 +23,7 @@ How it works:
 4. Generate native rectangle-based vector blockies inside the selected layers.
 
 Demo video:
-[Catppuccin Blockies Figma plugin demo](https://pub-bcc6d2313b944bc1945a7e7013ae2321.r2.dev/catppuccin-blockies/demo.mp4)
+[Catppuccin Blockies Figma plugin demo](https://media.annbjer.studio/catppuccin-blockies/demo.mp4)
 
 ### Local development
 
